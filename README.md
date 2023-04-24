@@ -30,6 +30,7 @@ npm install
 4. Run sample code:
 ```
 cd src
+edit region on libs/secretsClient.js and add secret arn on secrets_getsecretvalue.js
 node [example name].js // For example, node secrets_getsecretvalue.js
 ```
 
