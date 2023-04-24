@@ -20,7 +20,7 @@ instructions.
 which is the *@aws-sdk/client-secrets-manager*.
 ```
 npm install node -g
-cd javascriptv3/example_code/secrets 
+cd aws-secret-manager 
 npm install
 ```
 
