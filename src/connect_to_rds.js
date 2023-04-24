@@ -23,7 +23,7 @@ var mysql = require('mysql');
 import {
   GetSecretValueCommand,
 } from "@aws-sdk/client-secrets-manager";
-import { secretsClient } from "./libs/secretsClient.js" ;
+import { secretsClient } from "./src/libs/secretsClient.js" ;
 
 // Set the parameters
 const params = {

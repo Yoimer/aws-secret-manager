@@ -9,12 +9,13 @@
     "@aws-sdk/client-secrets-manager": "^3.32.0",
     "@aws-sdk/node-http-handler": "^3.32.0",
     "@aws-sdk/types": "^3.32.0",
-    "ts-node": "^9.0.0",
-    "ejs": "latest",
     "aws-sdk": "latest",
-    "express": "latest",
     "body-parser": "latest",
-    "mysql": "latest"
+    "ejs": "latest",
+    "express": "latest",
+    "mysql": "latest",
+    "package.json": "^2.0.1",
+    "ts-node": "^9.0.0"
   },
   "devDependencies": {
     "@types/node": "^14.0.23",

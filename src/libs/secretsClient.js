@@ -13,8 +13,11 @@ Inputs (replace in code):
 // snippet-start:[secrets.JavaScript.createclientv3]
 import { SecretsManagerClient } from "@aws-sdk/client-secrets-manager";
 // Set the AWS Region.
-const REGION = "REGION";
+const REGION = "us-east-1";
 //Set the Secrets Manager Service Object
 const secretsClient = new SecretsManagerClient({ region: REGION });
 export { secretsClient };
 // snippet-end:[secrets.JavaScript.createclientv3]
+
+// import { mysql } from "mysql"
+// export { mysql};
