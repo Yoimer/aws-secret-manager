@@ -21,42 +21,17 @@ import {
   GetSecretValueCommand,
 } from "@aws-sdk/client-secrets-manager";
 import { secretsClient } from "./libs/secretsClient.js" ;
-import mysql from 'mysql';
 
 // Set the parameters
 const params = {
-  SecretId: "arn:aws:secretsmanager:us-east-1:777970765756:secret:poc/secret-WQqIBG", //e.g. arn:aws:secretsmanager:REGION:XXXXXXXXXXXX:secret:mysecret-XXXXXX
+  SecretId: "SECRET_ID", //e.g. arn:aws:secretsmanager:REGION:XXXXXXXXXXXX:secret:mysecret-XXXXXX
 };
 
 const run = async () => {
   let data;
-  let rds;
   try {
     data = await secretsClient.send(new GetSecretValueCommand(params));
-    //console.log("data", data);
-    // parse secret values
-
-    rds = JSON.parse(data.SecretString);
-
-    // connects to RDS
-    var connection = mysql.createConnection({
-      host     : rds.host,
-      user     : rds.user,
-      password : rds.password,
-      port     : rds.port
-    });
-
-    connection.connect(function(err) {
-      if (err) {
-        console.error('Database connection failed: ' + err.stack);
-        return;
-      }
-    
-      console.log('Connected to database.');
-    });
-    
-    connection.end();
-
+    console.log("data", data);
     return data; // For unit tests.
   } catch (err) {
     console.log("err", err);
@@ -76,9 +51,4 @@ const run = async () => {
 run();
 // snippet-end:[secrets.JavaScript.retrieve.getSecretsValueV3]
 // For unit tests.
-// module.exports = {run, params}
-
-
-// Use this code snippet in your app.
-// If you need more information about configurations or implementing the sample code, visit the AWS docs:
-// https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/getting-started.html
+//module.exports = {run, params}
